@@ -7,7 +7,6 @@ struct WorkoutView: View {
     @EnvironmentObject var appState: AppState
     @State private var selectedDay: WorkoutDay?
     @State private var showAIAdapt = false
-    @State private var showActiveWorkout = false
 
     var body: some View {
         NavigationStack {
@@ -25,7 +24,6 @@ struct WorkoutView: View {
                             ForEach(plan.days.sorted { $0.weekday < $1.weekday }) { day in
                                 WorkoutDayCard(day: day, isToday: isToday(weekday: day.weekday)) {
                                     selectedDay = day
-                                    showActiveWorkout = true
                                 }
                             }
                         }
@@ -57,11 +55,9 @@ struct WorkoutView: View {
         .sheet(isPresented: $showAIAdapt) {
             AIAdaptSheet()
         }
-        .fullScreenCover(isPresented: $showActiveWorkout) {
-            if let day = selectedDay {
-                ActiveWorkoutView(day: day)
-                    .environmentObject(appState)
-            }
+        .fullScreenCover(item: $selectedDay) { day in
+            ActiveWorkoutView(day: day)
+                .environmentObject(appState)
         }
     }
 
@@ -193,7 +189,7 @@ struct ActiveWorkoutView: View {
     let day: WorkoutDay
     @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) var dismiss
-    @State private var exerciseLogs: [ExerciseLog] = []
+    @State private var exerciseLogs: [ExerciseLog]
     @State private var currentExerciseIndex = 0
     @State private var elapsedSeconds = 0
     @State private var timerRunning = true
@@ -201,6 +197,19 @@ struct ActiveWorkoutView: View {
     @State private var restTimerSeconds = 0
     @State private var showRestTimer = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
+    init(day: WorkoutDay) {
+        self.day = day
+        self._exerciseLogs = State(initialValue: day.exercises.map { ex in
+            ExerciseLog(
+                exerciseId: ex.id,
+                exerciseName: ex.name,
+                sets: (1...max(1, ex.sets)).map { i in
+                    WorkoutSet(setNumber: i, targetReps: ex.reps)
+                }
+            )
+        })
+    }
 
     var currentExercise: Exercise? {
         guard currentExerciseIndex < day.exercises.count else { return nil }
@@ -289,22 +298,9 @@ struct ActiveWorkoutView: View {
             if showRestTimer && restTimerSeconds > 0 { restTimerSeconds -= 1 }
             if restTimerSeconds == 0 { showRestTimer = false }
         }
-        .onAppear { setupLogs() }
         .alert("Finish Workout?", isPresented: $showFinish) {
             Button("Finish & Save", role: .destructive) { finishWorkout(); dismiss() }
             Button("Cancel", role: .cancel) {}
-        }
-    }
-
-    func setupLogs() {
-        exerciseLogs = day.exercises.map { ex in
-            ExerciseLog(
-                exerciseId: ex.id,
-                exerciseName: ex.name,
-                sets: (1...ex.sets).map { i in
-                    WorkoutSet(setNumber: i, targetReps: ex.reps)
-                }
-            )
         }
     }
 

@@ -14,6 +14,8 @@ struct UserProfile: Codable, Identifiable {
     var goals: [FitnessGoal] = []
     var experienceLevel: ExperienceLevel = .intermediate
     var workoutsPerWeek: Int = 4
+    var trainingDays: [Int] = [1, 2, 4, 5]  // 1=Mon … 7=Sun
+    var focusMuscleGroups: [Exercise.MuscleGroup] = []
     var availableEquipment: [Equipment] = Equipment.allCases
     var injuries: [Injury] = []
     var dietaryPreference: DietaryPreference = .none
@@ -152,7 +154,8 @@ struct Exercise: Codable, Identifiable, Hashable {
     var reps: String          // e.g. "8-12" or "AMRAP"
     var restSeconds: Int
     var notes: String = ""
-    var videoURL: String = "" // placeholder for demo video link
+    var instructions: [String] = []
+    var coachingCues: [String] = []
     var isInjuryAdapted: Bool = false
 
     enum MuscleGroup: String, Codable, CaseIterable {
@@ -359,6 +362,7 @@ class AppState: ObservableObject {
     @Published var aiMessages: [AIMessage] = []
     @Published var currentTab: Tab = .home
     @Published var isOnboarded: Bool = false
+    @Published var consumedMealIds: Set<UUID> = []
 
     enum Tab: Int, CaseIterable {
         case home, workout, nutrition, progress, rules
@@ -384,7 +388,10 @@ class AppState: ObservableObject {
 
     // Sample data generator
     func loadSampleData() {
-        workoutPlan = SampleData.workoutPlan
+        workoutPlan = SampleData.workoutPlan(
+            trainingDays: userProfile.trainingDays.sorted(),
+            focusMuscleGroups: userProfile.focusMuscleGroups
+        )
         mealPlan = SampleData.mealPlan
         measurements = SampleData.measurements
     }

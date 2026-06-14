@@ -16,7 +16,7 @@ struct MealPlanView: View {
 
                         // Macro summary for today
                         if let day = today {
-                            MacroSummaryCard(day: day, target: plan.targetCalories)
+                            MacroSummaryCard(day: day, target: plan.targetCalories, consumedMealIds: appState.consumedMealIds)
                         }
 
                         // Day selector
@@ -43,7 +43,13 @@ struct MealPlanView: View {
                         if let day = today {
                             VStack(spacing: 14) {
                                 ForEach(day.meals) { meal in
-                                    MealCard(meal: meal)
+                                    MealCard(meal: meal, isConsumed: Binding(
+                                        get: { appState.consumedMealIds.contains(meal.id) },
+                                        set: { consumed in
+                                            if consumed { appState.consumedMealIds.insert(meal.id) }
+                                            else { appState.consumedMealIds.remove(meal.id) }
+                                        }
+                                    ))
                                 }
                             }
                         }
@@ -80,22 +86,32 @@ struct MealPlanView: View {
 struct MacroSummaryCard: View {
     let day: DayMealPlan
     let target: Int
+    let consumedMealIds: Set<UUID>
 
-    var caloriePercent: Double { Double(day.totalCalories) / Double(target) }
+    var consumedMeals: [Meal] { day.meals.filter { consumedMealIds.contains($0.id) } }
+    var consumedCalories: Int { consumedMeals.reduce(0) { $0 + $1.calories } }
+    var consumedProtein: Double { consumedMeals.reduce(0) { $0 + $1.proteinG } }
+    var consumedCarbs: Double { consumedMeals.reduce(0) { $0 + $1.carbsG } }
+    var consumedFat: Double { consumedMeals.reduce(0) { $0 + $1.fatG } }
+    var caloriePercent: Double { Double(consumedCalories) / Double(target) }
 
     var body: some View {
         AppCard {
             VStack(spacing: 16) {
                 HStack {
-                    Text("Today's Nutrition").font(.headlineLarge).foregroundColor(.textPrimary)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Today's Nutrition").font(.headlineLarge).foregroundColor(.textPrimary)
+                        Text("\(consumedMeals.count) of \(day.meals.count) meals logged")
+                            .font(.caption).foregroundColor(.textSecondary)
+                    }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text("\(day.totalCalories)").font(.displaySmall).foregroundStyle(Color.gradientOrange)
+                        Text("\(consumedCalories)").font(.displaySmall).foregroundStyle(Color.gradientOrange)
                         Text("/ \(target) kcal").font(.caption).foregroundColor(.textSecondary)
                     }
                 }
 
-                // Calorie bar
+                // Calorie progress bar
                 GeometryReader { geo in
                     ZStack(alignment: .leading) {
                         Capsule().fill(Color.appCardElevated).frame(height: 8)
@@ -107,13 +123,13 @@ struct MacroSummaryCard: View {
                 }
                 .frame(height: 8)
 
-                // Macro breakdown
+                // Macro breakdown (consumed)
                 HStack(spacing: 0) {
-                    MacroPill(label: "Protein", value: String(format: "%.0fg", day.totalProtein), color: .accentMint)
+                    MacroPill(label: "Protein", value: String(format: "%.0fg", consumedProtein), color: .accentMint)
                     Divider().frame(height: 30).background(Color.textMuted.opacity(0.3))
-                    MacroPill(label: "Carbs", value: String(format: "%.0fg", day.totalCarbs), color: .accentPurple)
+                    MacroPill(label: "Carbs", value: String(format: "%.0fg", consumedCarbs), color: .accentPurple)
                     Divider().frame(height: 30).background(Color.textMuted.opacity(0.3))
-                    MacroPill(label: "Fat", value: String(format: "%.0fg", day.totalFat), color: .accentOrange)
+                    MacroPill(label: "Fat", value: String(format: "%.0fg", consumedFat), color: .accentOrange)
                 }
             }
         }
@@ -135,44 +151,64 @@ struct MacroPill: View {
 
 struct MealCard: View {
     let meal: Meal
+    @Binding var isConsumed: Bool
     @State private var isExpanded = false
 
     var body: some View {
         AppCard(padding: 0) {
             VStack(spacing: 0) {
-                Button {
-                    withAnimation(.spring(response: 0.35)) { isExpanded.toggle() }
-                } label: {
-                    HStack(spacing: 14) {
-                        // Meal time icon
-                        Image(systemName: meal.mealTime.icon)
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.accentOrange)
-                            .frame(width: 44, height: 44)
-                            .background(Color.accentOrange.opacity(0.15))
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                HStack(spacing: 14) {
+                    // Meal time icon — swaps to checkmark when consumed
+                    Image(systemName: isConsumed ? "checkmark.circle.fill" : meal.mealTime.icon)
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(isConsumed ? .accentMint : .accentOrange)
+                        .frame(width: 44, height: 44)
+                        .background((isConsumed ? Color.accentMint : Color.accentOrange).opacity(0.15))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .animation(.easeInOut(duration: 0.2), value: isConsumed)
 
+                    // Expand/collapse on name tap
+                    Button {
+                        withAnimation(.spring(response: 0.35)) { isExpanded.toggle() }
+                    } label: {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(meal.mealTime.rawValue)
                                 .font(.caption).foregroundColor(.textSecondary).tracking(1)
                             Text(meal.name)
-                                .font(.headlineLarge).foregroundColor(.textPrimary)
+                                .font(.headlineLarge)
+                                .foregroundColor(isConsumed ? .textSecondary : .textPrimary)
+                                .strikethrough(isConsumed, color: .textMuted)
                         }
-
-                        Spacer()
-
-                        VStack(alignment: .trailing, spacing: 4) {
-                            Text("\(meal.calories) kcal")
-                                .font(.headlineSmall).foregroundColor(.accentOrange)
-                            Text("\(meal.prepMinutes) min")
-                                .font(.caption).foregroundColor(.textMuted)
-                        }
-
-                        Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                            .font(.caption.bold()).foregroundColor(.textMuted)
                     }
-                    .padding(16)
+                    .buttonStyle(.plain)
+
+                    Spacer()
+
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text("\(meal.calories) kcal")
+                            .font(.headlineSmall)
+                            .foregroundColor(isConsumed ? .textMuted : .accentOrange)
+                        Text("\(meal.prepMinutes) min")
+                            .font(.caption).foregroundColor(.textMuted)
+                    }
+
+                    // Checkbox
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.2)) { isConsumed.toggle() }
+                    } label: {
+                        Image(systemName: isConsumed ? "checkmark.circle.fill" : "circle")
+                            .font(.title2)
+                            .foregroundColor(isConsumed ? .accentMint : .textMuted)
+                    }
+                    .buttonStyle(.plain)
+
+                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                        .font(.caption.bold()).foregroundColor(.textMuted)
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.35)) { isExpanded.toggle() }
+                        }
                 }
+                .padding(16)
 
                 if isExpanded {
                     VStack(alignment: .leading, spacing: 16) {
