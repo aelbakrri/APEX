@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		940717E22FDD9F1D0007F07B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 940717DD2FDD9F1D0007F07B /* README.md */; };
+		940717E32FDD9F1D0007F07B /* FitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717D72FDD9F1D0007F07B /* FitnessApp.swift */; };
+		940717E42FDD9F1D0007F07B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717D82FDD9F1D0007F07B /* HomeView.swift */; };
+		940717E52FDD9F1D0007F07B /* MealPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717D92FDD9F1D0007F07B /* MealPlanView.swift */; };
+		940717E62FDD9F1D0007F07B /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717DE2FDD9F1D0007F07B /* RulesView.swift */; };
+		940717E72FDD9F1D0007F07B /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717DF2FDD9F1D0007F07B /* SampleData.swift */; };
+		940717E82FDD9F1D0007F07B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717DA2FDD9F1D0007F07B /* Models.swift */; };
+		940717E92FDD9F1D0007F07B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717DB2FDD9F1D0007F07B /* OnboardingView.swift */; };
+		940717EA2FDD9F1D0007F07B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717DC2FDD9F1D0007F07B /* ProgressView.swift */; };
+		940717EB2FDD9F1D0007F07B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717E02FDD9F1D0007F07B /* Theme.swift */; };
+		940717EC2FDD9F1D0007F07B /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940717E12FDD9F1D0007F07B /* WorkoutView.swift */; };
+		940717EE2FDDF8D30007F07B /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 940717ED2FDDF8D30007F07B /* DMSans-Regular.ttf */; };
+		940717F22FDDF9020007F07B /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 940717F12FDDF9020007F07B /* DMSans-Medium.ttf */; };
+		940717F32FDDF9020007F07B /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 940717F02FDDF9020007F07B /* DMSans-Bold.ttf */; };
+		940717F42FDDF9020007F07B /* DMSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 940717EF2FDDF9020007F07B /* DMSans-Black.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		940717C92FDD9ECF0007F07B /* APEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		940717D72FDD9F1D0007F07B /* FitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessApp.swift; sourceTree = "<group>"; };
+		940717D82FDD9F1D0007F07B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		940717D92FDD9F1D0007F07B /* MealPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanView.swift; sourceTree = "<group>"; };
+		940717DA2FDD9F1D0007F07B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		940717DB2FDD9F1D0007F07B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		940717DC2FDD9F1D0007F07B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		940717DD2FDD9F1D0007F07B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		940717DE2FDD9F1D0007F07B /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		940717DF2FDD9F1D0007F07B /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		940717E02FDD9F1D0007F07B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		940717E12FDD9F1D0007F07B /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		940717ED2FDDF8D30007F07B /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		940717EF2FDDF9020007F07B /* DMSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Black.ttf"; sourceTree = "<group>"; };
+		940717F02FDDF9020007F07B /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		940717F12FDDF9020007F07B /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		940717CB2FDD9ECF0007F07B /* APEX */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = APEX;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		940717C62FDD9ECF0007F07B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		940717C02FDD9ECF0007F07B = {
+			isa = PBXGroup;
+			children = (
+				940717CB2FDD9ECF0007F07B /* APEX */,
+				940717CA2FDD9ECF0007F07B /* Products */,
+				940717D72FDD9F1D0007F07B /* FitnessApp.swift */,
+				940717D82FDD9F1D0007F07B /* HomeView.swift */,
+				940717D92FDD9F1D0007F07B /* MealPlanView.swift */,
+				940717DA2FDD9F1D0007F07B /* Models.swift */,
+				940717DB2FDD9F1D0007F07B /* OnboardingView.swift */,
+				940717DC2FDD9F1D0007F07B /* ProgressView.swift */,
+				940717DD2FDD9F1D0007F07B /* README.md */,
+				940717DE2FDD9F1D0007F07B /* RulesView.swift */,
+				940717DF2FDD9F1D0007F07B /* SampleData.swift */,
+				940717E02FDD9F1D0007F07B /* Theme.swift */,
+				940717E12FDD9F1D0007F07B /* WorkoutView.swift */,
+				940717ED2FDDF8D30007F07B /* DMSans-Regular.ttf */,
+				940717EF2FDDF9020007F07B /* DMSans-Black.ttf */,
+				940717F02FDDF9020007F07B /* DMSans-Bold.ttf */,
+				940717F12FDDF9020007F07B /* DMSans-Medium.ttf */,
+			);
+			sourceTree = "<group>";
+		};
+		940717CA2FDD9ECF0007F07B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				940717C92FDD9ECF0007F07B /* APEX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		940717C82FDD9ECF0007F07B /* APEX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 940717D42FDD9ED00007F07B /* Build configuration list for PBXNativeTarget "APEX" */;
+			buildPhases = (
+				940717C52FDD9ECF0007F07B /* Sources */,
+				940717C62FDD9ECF0007F07B /* Frameworks */,
+				940717C72FDD9ECF0007F07B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				940717CB2FDD9ECF0007F07B /* APEX */,
+			);
+			name = APEX;
+			packageProductDependencies = (
+			);
+			productName = APEX;
+			productReference = 940717C92FDD9ECF0007F07B /* APEX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		940717C12FDD9ECF0007F07B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					940717C82FDD9ECF0007F07B = {
+						CreatedOnToolsVersion = 26.5;
+						LastSwiftMigration = 2650;
+					};
+				};
+			};
+			buildConfigurationList = 940717C42FDD9ECF0007F07B /* Build configuration list for PBXProject "APEX" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 940717C02FDD9ECF0007F07B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 940717CA2FDD9ECF0007F07B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				940717C82FDD9ECF0007F07B /* APEX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		940717C72FDD9ECF0007F07B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				940717F22FDDF9020007F07B /* DMSans-Medium.ttf in Resources */,
+				940717F32FDDF9020007F07B /* DMSans-Bold.ttf in Resources */,
+				940717F42FDDF9020007F07B /* DMSans-Black.ttf in Resources */,
+				940717E22FDD9F1D0007F07B /* README.md in Resources */,
+				940717EE2FDDF8D30007F07B /* DMSans-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		940717C52FDD9ECF0007F07B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				940717E32FDD9F1D0007F07B /* FitnessApp.swift in Sources */,
+				940717E42FDD9F1D0007F07B /* HomeView.swift in Sources */,
+				940717E52FDD9F1D0007F07B /* MealPlanView.swift in Sources */,
+				940717E62FDD9F1D0007F07B /* RulesView.swift in Sources */,
+				940717E72FDD9F1D0007F07B /* SampleData.swift in Sources */,
+				940717E82FDD9F1D0007F07B /* Models.swift in Sources */,
+				940717E92FDD9F1D0007F07B /* OnboardingView.swift in Sources */,
+				940717EA2FDD9F1D0007F07B /* ProgressView.swift in Sources */,
+				940717EB2FDD9F1D0007F07B /* Theme.swift in Sources */,
+				940717EC2FDD9F1D0007F07B /* WorkoutView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		940717D22FDD9ED00007F07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		940717D32FDD9ED00007F07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		940717D52FDD9ED00007F07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "APEX uses Calendar to schedule your weekly workouts as recurring reminders.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.APEX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		940717D62FDD9ED00007F07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "APEX uses Calendar to schedule your weekly workouts as recurring reminders.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.APEX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		940717C42FDD9ECF0007F07B /* Build configuration list for PBXProject "APEX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				940717D22FDD9ED00007F07B /* Debug */,
+				940717D32FDD9ED00007F07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		940717D42FDD9ED00007F07B /* Build configuration list for PBXNativeTarget "APEX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				940717D52FDD9ED00007F07B /* Debug */,
+				940717D62FDD9ED00007F07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 940717C12FDD9ECF0007F07B /* Project object */;
+}

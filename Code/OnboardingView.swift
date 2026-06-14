@@ -83,7 +83,7 @@ struct WelcomeStep: View {
             Spacer().frame(height: 40)
 
             Text("APEX")
-                .font(.system(size: 48, weight: .black, design: .rounded))
+                .font(.custom("DMSans-Black", size: 48))
                 .foregroundStyle(Color.gradientMint)
 
             Text("Your intelligent training partner")
